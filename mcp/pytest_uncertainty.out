@@ -1,0 +1,39 @@
+EEF                                                                      [100%]
+=================================== ERRORS ====================================
+________ ERROR at setup of test_monte_carlo_brackets_deterministic_msp ________
+
+    @pytest.fixture(scope="module")
+    def cornstover_result():
+        eng = BioSTEAMEngine()
+        built = eng.build_system("cornstover")
+>       assert built["success"], built
+E       AssertionError: {'error': "could not load biorefinery 'cornstover': No module named 'biorefineries'", 'success': False}
+E       assert False
+
+test_uncertainty_sanity.py:29: AssertionError
+______ ERROR at setup of test_sensitivity_reflects_expected_cost_drivers ______
+
+    @pytest.fixture(scope="module")
+    def cornstover_result():
+        eng = BioSTEAMEngine()
+        built = eng.build_system("cornstover")
+>       assert built["success"], built
+E       AssertionError: {'error': "could not load biorefinery 'cornstover': No module named 'biorefineries'", 'success': False}
+E       assert False
+
+test_uncertainty_sanity.py:29: AssertionError
+================================== FAILURES ===================================
+__________________ test_uncertainty_restores_economic_state ___________________
+
+    def test_uncertainty_restores_economic_state():
+        """Monte Carlo must not leak sampled economics into later analyses."""
+>       import biosteam as bst
+E       ModuleNotFoundError: No module named 'biosteam'
+
+test_uncertainty_sanity.py:85: ModuleNotFoundError
+=========================== short test summary info ===========================
+FAILED test_uncertainty_sanity.py::test_uncertainty_restores_economic_state
+ERROR test_uncertainty_sanity.py::test_monte_carlo_brackets_deterministic_msp
+ERROR test_uncertainty_sanity.py::test_sensitivity_reflects_expected_cost_drivers
+1 failed, 2 errors in 0.99s
+EXIT=1
