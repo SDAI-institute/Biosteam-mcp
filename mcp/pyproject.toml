@@ -1,0 +1,16 @@
+﻿[project]
+name = "biosteam-mcp-server"
+version = "0.4.1"
+description = "MCP server for BioSTEAM/QSDsan bioprocess design, TEA, and LCA"
+authors = [{name = "Ernest Boakye Danquah", email = "eqb5538@psu.edu"}]
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+dependencies = [
+    "mcp==2.2.0",
+    "fastmcp==4.0.4",
+    "fastmcp-tasks==4.0.4",
+    "biosteam>=2.51",
+    "qsdsan>=1.4",
+    "biorefineries>=2.34",
