@@ -1,4 +1,4 @@
-﻿[project]
+[project]
 name = "biosteam-mcp-server"
 version = "0.4.1"
 description = "MCP server for BioSTEAM/QSDsan bioprocess design, TEA, and LCA"
@@ -14,3 +14,28 @@ dependencies = [
     "biosteam>=2.51",
     "qsdsan>=1.4",
     "biorefineries>=2.34",
+    "chaospy>=4.3",
+    "anyio>=4.0",
+    "redis>=5.0,<9",
+]
+
+[project.scripts]
+# Run from the mcp/ directory (so `engine` is importable): biosteam-mcp
+biosteam-mcp = "src.app:run"
+
+[project.optional-dependencies]
+http = ["uvicorn>=0.23.0", "starlette>=0.27.0"]
+dev = ["pytest>=7.0.0", "pytest-asyncio>=0.21.0"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+# Pin the distributed package so flat-layout auto-discovery doesn't choke on the
+# sibling engine.py / test modules (mirrors openlca_mcp).
+[tool.setuptools]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["."]
