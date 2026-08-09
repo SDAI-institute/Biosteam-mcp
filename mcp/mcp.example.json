@@ -1,6 +1,15 @@
-﻿{
+{
   "//": "Example MCP client config. Point your client at the BioSTEAM server over stdio.",
   "//cwd": "cwd MUST be the mcp/ directory so the `src` package and sibling engine.py resolve.",
   "mcpServers": {
     "biosteam": {
       "command": "python",
+      "args": ["-m", "src"],
+      "cwd": "D:/01code/Projects/SDAI- Ecosystem/Biosteam/mcp",
+      "env": {
+        "PYTHONWARNINGS": "ignore",
+        "TRANSPORT": "stdio"
+      }
+    }
+  }
+}
