@@ -1,4 +1,4 @@
-﻿# BioSTEAM / QSDsan MCP Validation Scope
+# BioSTEAM / QSDsan MCP Validation Scope
 
 This page summarizes the current repository reliability evidence without presenting BioSTEAM as a full LCA engine or generalizing fixture results beyond their tested scope. The detailed record remains in [`RELIABILITY.md`](../RELIABILITY.md).
 
@@ -22,4 +22,41 @@ The recorded FCI, FOC, VOC, NPV, and MSP values match between the MCP engine pat
 
 The validation builds a minimal custom model with known flows and supplied characterization factors. The recorded checks include:
 
-- feed contribution: `100 kg/h Ã— 7,920 h Ã— 2.5 = 1,980,000`, matched exactly;
+- feed contribution: `100 kg/h × 7,920 h × 2.5 = 1,980,000`, matched exactly;
+- electricity contribution: approximately `0.3208 kW × 7,920 h × 0.5 = 1,270.4`, matched by the engine.
+
+These tests validate the arithmetic path used by `get_lca_results` for the fixtures. They do not create or validate a background life-cycle inventory.
+
+## Uncertainty and sensitivity sanity
+
+The cornstover test records correctly ordered MSP percentiles around the deterministic value and physically interpretable Spearman directions for selected economic drivers. This is an internal-consistency/sanity check, not an external benchmark for the Monte Carlo distribution.
+
+## What this evidence supports
+
+Within the documented environment and fixtures, the tests support statements that:
+
+- the tested MCP wrapper reproduced direct BioSTEAM TEA outputs for the reference model;
+- the tested foreground factor arithmetic matched independent hand calculations;
+- the tested uncertainty/sensitivity workflow behaved coherently for the selected parameters.
+
+## What it does not support
+
+The validation does **not** establish:
+
+- physical or scale-up validity of arbitrary BioSTEAM/QSDsan models;
+- accuracy of cost correlations for a particular project;
+- validity or completeness of caller-supplied characterization factors;
+- equivalence to a full background-database LCA engine;
+- correctness of every optimization problem or uncertainty distribution;
+- hosted reliability, security, or customer outcomes.
+
+## Reproduction
+
+The repository records:
+
+```bash
+cd Biosteam/mcp
+/c/MSI/anaconda3/envs/envShilab/python.exe -m pytest -q
+```
+
+Preserve the environment package versions and source revision with any reproduced validation record.
