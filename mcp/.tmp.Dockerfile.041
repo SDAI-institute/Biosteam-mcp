@@ -1,0 +1,14 @@
+FROM sdai/biosteam-mcp:0.4.0-handle-recovery
+
+USER root
+WORKDIR /app
+
+COPY pyproject.toml README.md engine.py ./
+COPY src/ ./src/
+RUN pip install --no-cache-dir --no-deps . && chown -R mcp:mcp /app
+
+USER mcp
+
+LABEL org.opencontainers.image.version="0.4.1"
+
+CMD ["python", "-m", "src"]
