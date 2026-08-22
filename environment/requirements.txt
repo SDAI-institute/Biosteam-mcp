@@ -1,0 +1,12 @@
+﻿# BioSTEAM + QSDsan tutorial ecosystem â€” Python 3.11 (envShilab)
+#
+# Install into the envShilab conda env:
+#   conda activate envShilab
+#   pip install -r environment/requirements.txt
+#
+# Versions are left unpinned so pip resolves a mutually-consistent set; the exact
+# resolved versions at build time are recorded in the top-level README.md and by
+# environment/verify_install.py.
+
+# --- Core process-modeling stack ---
+biosteam            # process simulation, systems, TEA (pulls in thermosteam, chemicals)
