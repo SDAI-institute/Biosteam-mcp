@@ -1,4 +1,4 @@
-﻿# BioSTEAM + QSDsan tutorial ecosystem â€” Python 3.11 (envShilab)
+# BioSTEAM + QSDsan tutorial ecosystem — Python 3.11 (envShilab)
 #
 # Install into the envShilab conda env:
 #   conda activate envShilab
@@ -10,3 +10,21 @@
 
 # --- Core process-modeling stack ---
 biosteam            # process simulation, systems, TEA (pulls in thermosteam, chemicals)
+qsdsan              # quantitative sustainable design: SanUnit, WasteStream, dynamic sims
+biorefineries       # canonical BioSTEAM biorefinery models (cornstover, lipidcane, ...)
+
+# --- Uncertainty / sensitivity (usually pulled in transitively, pinned here for clarity) ---
+chaospy             # distributions + sampling for Monte Carlo / sensitivity
+matplotlib          # figures in notebooks
+
+# --- Notebook execution toolchain ---
+jupyter
+ipykernel
+nbconvert
+
+# --- MCP server (mcp/) ---
+fastmcp>=3.4        # FastMCP server framework (also pulls the `mcp` SDK)
+
+# --- Testing ---
+pytest
+pytest-asyncio      # async in-memory MCP client tests
