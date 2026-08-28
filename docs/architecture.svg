@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
   <style>
     .layer { rx: 10; }
     .title { font-size: 15px; font-weight: 700; }
@@ -17,10 +17,50 @@
   <rect x="80" y="72" width="600" height="66" rx="10" fill="#EEF2FF" stroke="#6366F1" stroke-width="1.5"/>
   <text x="100" y="98" class="tag" fill="#4338CA">AGENT</text>
   <text x="100" y="118" class="title" fill="#1e1b4b">LCA Copilot</text>
-  <text x="100" y="132" class="sub">skills/biosteam â†’ biosteam-qsdsan MCP Â· foreground inventory â†’ openLCA/Brightway</text>
+  <text x="100" y="132" class="sub">skills/biosteam → biosteam-qsdsan MCP · foreground inventory → openLCA/Brightway</text>
 
   <!-- Tool layer -->
   <rect x="80" y="152" width="600" height="86" rx="10" fill="#ECFDF5" stroke="#0E9E73" stroke-width="1.5"/>
   <text x="100" y="178" class="tag" fill="#047857">TOOL</text>
   <text x="100" y="198" class="title" fill="#064e3b">biosteam-qsdsan MCP server</text>
-  <text x="100" y="213" class="sub">mcp/src Â· FastMCP Â· 14 tools (build / analyze / meta)</text>
+  <text x="100" y="213" class="sub">mcp/src · FastMCP · 14 tools (build / analyze / meta)</text>
+  <text x="100" y="229" class="sub">└─ engine.py — MCP-agnostic core, the JSON results contract</text>
+
+  <!-- Domain frameworks -->
+  <rect x="80" y="252" width="600" height="110" rx="10" fill="#FFF7ED" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="100" y="278" class="tag" fill="#C2410C">DOMAIN FRAMEWORKS</text>
+  <rect x="100" y="290" width="270" height="58" rx="8" fill="#fff" stroke="#FDBA74"/>
+  <text x="114" y="312" class="title" font-size="13" fill="#7c2d12">BioSTEAM</text>
+  <text x="114" y="330" class="sub">Unit · System · TEA · LCA</text>
+  <rect x="390" y="290" width="270" height="58" rx="8" fill="#fff" stroke="#FDBA74"/>
+  <text x="404" y="312" class="title" font-size="13" fill="#7c2d12">QSDsan</text>
+  <text x="404" y="330" class="sub">SanUnit · WasteStream · processes</text>
+  <text x="404" y="286" class="note" font-size="10">subclasses BioSTEAM ▸ shared tooling</text>
+
+  <!-- Thermo engine -->
+  <rect x="80" y="376" width="600" height="60" rx="10" fill="#F1F5F9" stroke="#64748B" stroke-width="1.5"/>
+  <text x="100" y="402" class="tag" fill="#334155">THERMO ENGINE</text>
+  <text x="100" y="422" class="title" fill="#0f172a">thermosteam</text>
+  <text x="330" y="422" class="sub">Chemical · Stream · phase equilibrium · energy balances</text>
+
+  <!-- data flow arrow -->
+  <line x1="380" y1="138" x2="380" y2="152" stroke="#6366F1" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="380" y1="238" x2="380" y2="252" stroke="#0E9E73" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="380" y1="362" x2="380" y2="376" stroke="#EA580C" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- request/response callout -->
+  <rect x="80" y="460" width="600" height="80" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="100" y="484" class="tag" fill="#334155">TOOL CALL FLOW</text>
+  <text x="100" y="508" class="note" font-size="12">
+    agent ──tool call──▸ src/tools.py ──offload──▸ engine.py ──▸ BioSTEAM / QSDsan
+  </text>
+  <text x="100" y="528" class="flow">
+    ◂── { success, … } JSON envelope ◂──────────────────────────────┘
+  </text>
+</svg>
