@@ -1,0 +1,26 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+  <style>
+    .layer { rx: 10; }
+    .title { font-size: 15px; font-weight: 700; }
+    .sub   { font-size: 11.5px; fill: #475569; }
+    .tag   { font-size: 11px; font-weight: 600; }
+    .note  { font-size: 11px; fill: #64748b; }
+    .flow  { font-size: 11px; fill: #0E9E73; font-weight: 600; }
+  </style>
+
+  <text x="380" y="30" text-anchor="middle" class="title" font-size="19" fill="#0f172a">
+    BioSTEAM / QSDsan Ecosystem
+  </text>
+  <text x="380" y="50" text-anchor="middle" class="sub">each layer depends only on the ones below it</text>
+
+  <!-- Agent layer -->
+  <rect x="80" y="72" width="600" height="66" rx="10" fill="#EEF2FF" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="100" y="98" class="tag" fill="#4338CA">AGENT</text>
+  <text x="100" y="118" class="title" fill="#1e1b4b">LCA Copilot</text>
+  <text x="100" y="132" class="sub">skills/biosteam â†’ biosteam-qsdsan MCP Â· foreground inventory â†’ openLCA/Brightway</text>
+
+  <!-- Tool layer -->
+  <rect x="80" y="152" width="600" height="86" rx="10" fill="#ECFDF5" stroke="#0E9E73" stroke-width="1.5"/>
+  <text x="100" y="178" class="tag" fill="#047857">TOOL</text>
+  <text x="100" y="198" class="title" fill="#064e3b">biosteam-qsdsan MCP server</text>
+  <text x="100" y="213" class="sub">mcp/src Â· FastMCP Â· 14 tools (build / analyze / meta)</text>
