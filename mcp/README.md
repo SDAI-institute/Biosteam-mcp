@@ -1,7 +1,6 @@
 # BioSTEAM / QSDsan MCP
 
-An MCP server that exposes BioSTEAM/QSDsan process design, TEA, LCA, and uncertainty
-analysis as tools — for eventual integration into the **LCA Copilot**.
+An MCP server that exposes BioSTEAM/QSDsan process design, TEA, foreground impact accounting, uncertainty, and optimization as tools for MCP-compatible clients, including SDAI LCA Copilot.
 
 ## Status
 | Piece | State |

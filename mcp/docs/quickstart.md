@@ -11,7 +11,7 @@ Use the MCP server to build or load process systems, simulate them, inspect stre
 - chaospy 4.3+
 - the validated SDAI environment or an equivalent compatible environment
 
-The reviewed MCP package version is 0.1.0.
+The reviewed MCP package version is 0.4.1.
 
 ## 1. Install
 
