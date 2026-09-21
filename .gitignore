@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -10,3 +10,20 @@ __pycache__/
 .venv/
 venv/
 env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local secrets / config
+mcp/mcp.json
+.env
+
+#personal local only files
+CHECKLIST.md
+README_LOCAL.md
+docs/
+env
